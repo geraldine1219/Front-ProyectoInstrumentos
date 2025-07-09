@@ -5,7 +5,7 @@ import axios from "axios";
 import Sidebar from "../../components/Sidebar";
 import "../../styles/administrador/Profesor.css";
 import { getUserFromLocalStorage } from "../../utils/auth";
-
+import React from 'react';
 import { Pensul } from "../../types/Pensul";
 
 const apiUrl = import.meta.env.VITE_API_URL;

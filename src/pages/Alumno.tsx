@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Sidebar from "../components/Sidebar";
+import React from 'react';
 
 export default function Admin() {
 

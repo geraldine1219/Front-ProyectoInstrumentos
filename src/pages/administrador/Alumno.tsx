@@ -5,6 +5,7 @@ import axios from "axios";
 import Sidebar from "../../components/Sidebar";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import "../../styles/administrador/Alumno.css";
+import React from 'react';
 
 const apiUrl = import.meta.env.VITE_API_URL;
 

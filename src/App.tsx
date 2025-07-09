@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 // import Home from "./pages/Home";
 // import Login from "./pages/Login";
 // import NotFound from "./pages/NotFound";
+import React from 'react';
 
 import './index.css'
 
@@ -26,6 +27,9 @@ import Profesor from './pages/Profesor'
 import PensulProfesor from './pages/profesor/Pensul'
 
 function App() {
+
+
+
   return (
     <Routes>
       <Route path="/" element={<Login />} />

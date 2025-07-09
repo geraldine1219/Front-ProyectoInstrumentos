@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 import "../styles/components/Sidebar.css"
 import { useNavigate } from "react-router-dom";
+import React from 'react';
 
 type SidebarProps = {
     collapsed: boolean;
