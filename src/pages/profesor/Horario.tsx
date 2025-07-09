@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Popup } from "../../components/Popup";
+import { PopupProfesor } from "../../components/Popup";
 import Sidebar from "../../components/Sidebar";
 import axios from "axios";
 import "../../styles/components/HorarioSemanal.css"
 
 import { getUserFromLocalStorage } from "../../utils/auth";
-import { Cell, HorarioAlumno } from "../../types/HorarioAlumno";
-import { constantHorarioAlumno } from "../../utils/constants";
+import { Cell, HorarioProfesor } from "../../types/HorarioProfesor";
+import { constantHorarioProfesor } from "../../utils/constants";
 
 const apiUrl = import.meta.env.VITE_API_URL2;
 
@@ -20,9 +20,9 @@ export default function Calendar() {
 
   const [collapsed, setCollapsed] = useState(false);
   const [selectedCell, setSelectedCell] = useState<Cell | null>(null);
-  const [horario, setHorario] = useState<HorarioAlumno[]>([]);
-  const [selectedHorario, setSelectedHorario] = useState<HorarioAlumno>({
-        ...constantHorarioAlumno
+  const [horario, setHorario] = useState<HorarioProfesor[]>([]);
+  const [selectedHorario, setSelectedHorario] = useState<HorarioProfesor>({
+        ...constantHorarioProfesor
       });
 
   const handleCellClick = (day: string, hour: string) => {
@@ -33,7 +33,7 @@ export default function Calendar() {
       setSelectedHorario(resultado)
     }else{
       setSelectedHorario({
-        ...constantHorarioAlumno,
+        ...constantHorarioProfesor,
         "dia": day,
         "hour": hour,
       })
@@ -47,12 +47,10 @@ export default function Calendar() {
   return horario.some(c => c.dia === dia && c.hour === hour);
 };
 
-
   useEffect(() => {
-    axios.get(`${apiUrl}/api/alumnoHorario/horario/${user?.idAlumno}`)
+    axios.get(`${apiUrl}/api/alumnoHorario/horario/profesor/${user?.idProfesor}`)
       .then(res => {
-          console.log(res.data)
-          setHorario(res.data.alumnoHorario)
+          setHorario(res.data.profesorHorario)
       })
       .catch(err => {
           console.error("Error al obtener horarios:", err);
@@ -62,7 +60,7 @@ export default function Calendar() {
   return (
     <div>
       <div style={{ display: "flex" }}>
-        <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} selectedIconPage="Horario" selectedSidebarNav="Alumno" />
+        <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} selectedIconPage="Horario" selectedSidebarNav="Profesor" />
         <div className="content-sidebear" style={{ width: collapsed ? "90vw" : "80vw" }}>
           <h1 className="titulo-principal">Calendario Semanal</h1>
           <hr className="linea-azul"></hr>
@@ -110,7 +108,7 @@ export default function Calendar() {
 
       {/* Popup */}
       {selectedCell && (
-        <Popup
+        <PopupProfesor
           data={selectedHorario}
           onClose={() => setSelectedCell(null)}
         />

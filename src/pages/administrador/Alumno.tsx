@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-// //const apiUrl = import.meta.env.VITE_API_URL;
+
 import Sidebar from "../../components/Sidebar";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import "../../styles/administrador/Alumno.css";
 import React from 'react';
 
-//const apiUrl = import.meta.env.VITE_API_URL;
-const apiUrl = "backconservatoriomusica-bhe8dsakdqa4a0gp.westus-01.azurewebsites.net"
+const apiUrl = import.meta.env.VITE_API_URL2;
+
 
 type Alumno = {
     nombre: string;

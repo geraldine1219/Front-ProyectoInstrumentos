@@ -1,28 +1,28 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-// //const apiUrl = import.meta.env.VITE_API_URL;
+
 import Sidebar from "../../components/Sidebar";
 import "../../styles/administrador/Profesor.css";
 import { getUserFromLocalStorage } from "../../utils/auth";
 import React from 'react';
-import { Pensul } from "../../types/Pensul";
+import { PensulData } from "../../types/Pensul";
 
-//const apiUrl = import.meta.env.VITE_API_URL;
-const apiUrl = "backconservatoriomusica-bhe8dsakdqa4a0gp.westus-01.azurewebsites.net"
+const apiUrl = import.meta.env.VITE_API_URL2;
+
 
 export default function PensulAlumno() {
 
     const user = getUserFromLocalStorage();
 
     const [collapsed, setCollapsed] = useState(false);
-    const [pensuls, setPensul] = useState<Pensul[]>([]);
+    const [pensuls, setPensul] = useState<PensulData[]>([]);
 
     useEffect(() => {
-        axios.get(`${apiUrl}/api/alumno/pensul/${user.idProfesor}`)
+        axios.get(`${apiUrl}/api/pensul/listAlumnos/${user.idProfesor}`)
             .then(res => {
-                if (res.data.pensul) {
-                    setPensul(res.data.pensul);
+                if (res.data.pensuls) {
+                    setPensul(res.data.pensuls);
                 }
             })
             .catch(err => {
@@ -43,19 +43,25 @@ export default function PensulAlumno() {
                                 <table className="tabla-profesores">
                                     <thead className="encabezado-tabla">
                                         <tr>
-                                            <th className="px-4 py-2 border">Id</th>
-                                            <th className="px-4 py-2 border">Clase</th>
+                                            <th className="px-4 py-2 border">Id Pensul</th>
+                                            <th className="px-4 py-2 border">Id Alumno</th>
+                                            <th className="px-4 py-2 border">Id Clase</th>
                                             <th className="px-4 py-2 border">Nota</th>
-                                            <th className="px-4 py-2 border">Actualización</th>
+                                            <th className="px-4 py-2 border">Nombre</th>
+                                            <th className="px-4 py-2 border">Apellido</th> 
+                                            <th className="px-4 py-2 border">Asignatura</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {pensuls.map((alumno, index) => (
                                             <tr key={index} className="text-center">
                                                 <td className="px-4 py-2 border">{alumno.idPensul}</td>
+                                                <td className="px-4 py-2 border">{alumno.idAlumno}</td>
                                                 <td className="px-4 py-2 border">{alumno.idClase}</td>
                                                 <td className="px-4 py-2 border">{alumno.nota}</td>
-                                                <td className="px-4 py-2 border">{alumno.fechaActualizacion}</td>
+                                                <td className="px-4 py-2 border">{alumno.nombreAlumno}</td>
+                                                <td className="px-4 py-2 border">{alumno.apellidoAlumno}</td>
+                                                <td className="px-4 py-2 border">{alumno.nombreAsignatura}</td>
                                             </tr>
                                         ))}
                                     </tbody>

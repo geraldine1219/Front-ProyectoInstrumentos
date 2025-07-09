@@ -70,12 +70,12 @@ const Sidebar = ({ collapsed, setCollapsed, selectedIconPage, selectedSidebarNav
                 </div>
 
                 <div className="sidebar-nav">
-                    {optionsNav[selectedSidebarNav].map((item) => (
+                    {optionsNav[selectedSidebarNav as 'Administrador' | 'Alumno' | 'Profesor'].map((item) => (
                         <div key={item.label} className={`sidebar-item ${selectedIconPage == item.label && "selectedSection"}`}
                             onClick={() => navigate(item.path)}
                             style={{ cursor: "pointer" }}>
                             {item.icon}
-                            {!collapsed && <span className="sidebar-label">{item.label}</span>}
+                            {!collapsed && <span>{item.label}</span>}
                         </div>
                     ))}
                 </div>

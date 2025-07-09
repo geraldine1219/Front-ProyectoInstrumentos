@@ -4,22 +4,52 @@ import axios from "axios";
 import Sidebar from "../components/Sidebar";
 import React from 'react';
 
-// //const apiUrl = import.meta.env.VITE_API_URL;
-const apiUrl = "backconservatoriomusica-bhe8dsakdqa4a0gp.westus-01.azurewebsites.net"
+const apiUrl = import.meta.env.VITE_API_URL2;
+
 
 export default function Profesor() {
-  
+
   const [collapsed, setCollapsed] = useState(false);
 
-  return (
-    <>
-            <div style={{ display: "flex" }}>
-                <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} selectedIconPage="Asignatura" selectedSidebarNav="Profesor" />
-                <div className="content-sidebear" style={{ width: collapsed ? "90.2vw" : "80.5vw" }}>
-                    <h1>Contenido Principal</h1>
-                    <p>Aquí va tu contenidoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                </div>
-            </div>
-        </>
+    const containerStyle = {
+    minHeight: '30vh',
+    
+    // display: 'flex',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    padding: '40px',
+    fontFamily: 'Arial, sans-serif',
+  };
+  
+  const titleStyle = {
+    // fontSize: '36px',
+    fontWeight: 'bold',
+    color: '#1e3a8a',
+    marginBottom: '20px',
+  };
+
+  const textStyle = {
+    fontSize: '18px',
+    color: '#374151',
+    lineHeight: '1.6',
+    marginBottom: '30px',
+  };
+  return (<>
+    <div style={{ display: "flex" }}>
+    <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} selectedIconPage="Home" selectedSidebarNav="Profesor" />
+    <div className="content-sidebear" style={{ width: collapsed ? "90vw" : "80vw" }}>
+
+    <div style={containerStyle}>
+      <div>
+        <h1 style={titleStyle}>¡Bienvenido!</h1>
+        <p style={textStyle}>
+          Nos alegra tenerte de vuelta en el Conservatorio de Música. Te deseamos una experiencia llena de aprendizaje y armonía musical.
+        </p>
+      </div>
+    </div>
+    </div>
+    </div>
+  </>
   );
+
 }

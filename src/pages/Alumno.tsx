@@ -7,16 +7,45 @@ export default function Admin() {
 
     const [collapsed, setCollapsed] = useState(false);
 
-    return (
-        <>
-            <div style={{ display: "flex" }}>
-                <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} selectedIconPage="Asignatura" selectedSidebarNav="Alumno" />
-                <div className="content-sidebear" style={{ width: collapsed ? "96.2vw" : "89.5vw" }}>
-                    <h1>Contenido Principal</h1>
-                    <p>Aquí va tu contenidoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                </div>
-            </div>
-        </>
+    const containerStyle = {
+    minHeight: '30vh',
+    
+    // display: 'flex',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    padding: '40px',
+    fontFamily: 'Arial, sans-serif',
+  };
+  
+  const titleStyle = {
+    // fontSize: '36px',
+    fontWeight: 'bold',
+    color: '#1e3a8a',
+    marginBottom: '20px',
+  };
 
-    );
+  const textStyle = {
+    fontSize: '18px',
+    color: '#374151',
+    lineHeight: '1.6',
+    marginBottom: '30px',
+  };
+  return (<>
+    <div style={{ display: "flex" }}>
+    <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} selectedIconPage="Home" selectedSidebarNav="Alumno" />
+    <div className="content-sidebear" style={{ width: collapsed ? "90vw" : "80vw" }}>
+
+    <div style={containerStyle}>
+      <div>
+        <h1 style={titleStyle}>¡Bienvenido!</h1>
+        <p style={textStyle}>
+          Nos alegra tenerte de vuelta en el Conservatorio de Música. Te deseamos una experiencia llena de aprendizaje y armonía musical.
+        </p>
+      </div>
+    </div>
+    </div>
+    </div>
+  </>
+  );
+
 }

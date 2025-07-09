@@ -20,11 +20,12 @@ import ClaseAdmin from './pages/administrador/Clase'
 import HorarioAdmin from './pages/administrador/Horario'
 
 import Alumno from './pages/Alumno'
-import PensulAlumno from './pages/Alumno/Pensul'
+import PensulAlumno from './pages/alumno/Pensuls'
 import HorarioAlumno from './pages/alumno/Horario'
 
 import Profesor from './pages/Profesor'
 import PensulProfesor from './pages/profesor/Pensul'
+import HorarioProfesor from './pages/profesor/Horario'
 
 function App() {
 
@@ -52,6 +53,7 @@ function App() {
 
       <Route path="/profesor" element={<Profesor />} />
       <Route path="/profesor/estudiantes" element={<PensulProfesor />} />
+      <Route path="/profesor/horario" element={<HorarioProfesor />} />
 
       <Route path="*" element={<Login />} />
     </Routes>
