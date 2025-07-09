@@ -4,7 +4,8 @@ import axios from "axios";
 import Sidebar from "../components/Sidebar";
 import React from 'react';
 
-// const apiUrl = import.meta.env.VITE_API_URL;
+// //const apiUrl = import.meta.env.VITE_API_URL;
+const apiUrl = "backconservatoriomusica-bhe8dsakdqa4a0gp.westus-01.azurewebsites.net"
 
 export default function Profesor() {
   

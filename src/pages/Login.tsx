@@ -6,7 +6,8 @@ import React from 'react';
 
 import { useNavigate } from "react-router-dom";
 
-const apiUrl = import.meta.env.VITE_API_URL;
+//const apiUrl = import.meta.env.VITE_API_URL;
+const apiUrl = "backconservatoriomusica-bhe8dsakdqa4a0gp.westus-01.azurewebsites.net"
 
 export default function Login() {
 

@@ -8,7 +8,8 @@ import { getUserFromLocalStorage } from "../../utils/auth";
 import { Cell, HorarioAlumno } from "../../types/HorarioAlumno";
 import { constantHorarioAlumno } from "../../utils/constants";
 
-const apiUrl = import.meta.env.VITE_API_URL;
+//const apiUrl = import.meta.env.VITE_API_URL;
+const apiUrl = "backconservatoriomusica-bhe8dsakdqa4a0gp.westus-01.azurewebsites.net"
 
 const DAYS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
 const HOURS = Array.from({ length: 18 }, (_, i) => `${(i + 6).toString().padStart(2, "0")}:00`);

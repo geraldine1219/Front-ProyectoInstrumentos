@@ -2,7 +2,8 @@ import { useState } from "react";
 // import "../styles/Login1.css";
 import axios from "axios";
 import React from 'react';
-// const apiUrl = import.meta.env.VITE_API_URL;
+// //const apiUrl = import.meta.env.VITE_API_URL;
+const apiUrl = "backconservatoriomusica-bhe8dsakdqa4a0gp.westus-01.azurewebsites.net"
 import Sidebar from "../components/Sidebar";
 
 export default function Admin() {
