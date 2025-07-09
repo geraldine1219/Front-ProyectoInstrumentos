@@ -1,0 +1,55 @@
+.encabezado-tabla {
+  background: linear-gradient(to bottom right, #6b46c1, #040db6);
+  color: white;
+}
+
+.tabla-pensuls {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  overflow: hidden;
+  
+}
+
+
+.tabla-pensuls th,
+.tabla-pensuls td {
+  border: 1px solid black;
+  padding: 8px;
+  vertical-align: middle;
+}
+
+.titulo-principal {
+  color: #2720BA;
+  display: flex;
+  align-items: center;
+}
+
+.linea-azul {
+  border: none;
+  height: 2px;
+  background-color: #2720BA;
+  margin: 1rem 0;
+}
+
+.form-grid-container-data{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+  margin-top: 1%;
+  /* padding: 1px; */
+}
+
+.btn-wrapper-register {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  /* gap: 10px;   */
+  /* width: 250px; */
+}
+
+.btn-wrapper-register .btn-submit {
+  width: 450px;
+}

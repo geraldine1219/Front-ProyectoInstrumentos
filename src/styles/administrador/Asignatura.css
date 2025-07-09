@@ -1,0 +1,7 @@
+.form-grid-container-asignatura{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 1%;
+  /* padding: 1px; */
+}

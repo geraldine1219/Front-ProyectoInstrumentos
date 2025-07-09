@@ -1,0 +1,43 @@
+/* Tabla */
+.tableHorario {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Celdas de la tabla */
+.tableHorario td,
+.tableHorario th {
+  border: 1px solid black;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+  /* background-color: #f9f9f9; */
+}
+
+
+/* Estilo para celdas seleccionadas */
+.selectedCell {
+  background-color: rgb(173, 177, 230);
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Estilo para celdas no seleccionadas */
+.defaultCell {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.cellWithClass {
+  background-color: #8d78db;
+  cursor: pointer;
+}
+
+
+.dot {
+  width: 8px;
+  height: 8px;
+  margin: auto;
+  background-color: #161086;
+  border-radius: 50%;
+}
