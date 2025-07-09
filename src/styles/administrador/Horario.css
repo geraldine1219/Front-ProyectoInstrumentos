@@ -1,0 +1,119 @@
+.encabezado-tabla {
+  background: linear-gradient(to bottom right, #6b46c1, #040db6);
+  color: white;
+}
+
+.tabla-horarios {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  overflow: hidden;
+  
+}
+
+
+.tabla-horarios th,
+.tabla-horarios td {
+  border: 1px solid black;
+  padding: 8px;
+  vertical-align: middle;
+}
+
+.titulo-principal {
+  color: #2720BA;
+  display: flex;
+  align-items: center;
+}
+
+.linea-azul {
+  border: none;
+  height: 2px;
+  background-color: #2720BA;
+  margin: 1rem 0;
+}
+
+.form-grid-container-data{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+  margin-top: 1%;
+  /* padding: 1px; */
+}
+
+.btn-wrapper-register {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  /* gap: 10px;   */
+  /* width: 250px; */
+}
+
+.btn-wrapper-register .btn-submit {
+  width: 450px;
+}
+
+
+
+
+
+
+
+/* Agrupador del checklist */
+.checklist-dias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Estilo para cada checkbox */
+.checkbox-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f3f4f6; /* gris claro */
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.checkbox-card:hover {
+  background-color: #e0e7ff; /* azul claro */
+  border-color: #4f46e5;     /* borde azul */
+}
+
+/* Input checkbox estilizado */
+.checkbox-card input[type="checkbox"] {
+  accent-color: #4f46e5; /* color del checkbox marcado */
+  width: 16px;
+  height: 16px;
+}
+
+/* Texto */
+.checkbox-card span {
+  font-weight: 500;
+  color: #1f2937; /* gris oscuro */
+}
+
+
+
+.input-hora {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  font-size: 1rem;
+  color: #1f2937;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.input-hora:focus {
+  outline: none;
+  border-color: #4f46e5;
+  background-color: #eef2ff;
+}

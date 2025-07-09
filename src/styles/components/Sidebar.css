@@ -1,0 +1,262 @@
+/* Contenedor principal */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 50vw;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #2720BA; /* Mantén el morado oscuro */
+  color: white;
+  transition: width 0.3s;
+  overflow: hidden;
+  height: 100vh;
+  position: relative; /* necesario para que los z-indices funcionen */
+  z-index: 1;
+  margin-right: 2%;
+}
+
+.sidebar.collapsed {
+  width: 5%;
+}
+
+.sidebar.expanded {
+  width: 15%;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px;
+  background-color: linear-gradient(to bottom right, #6b46c1, #040db6);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  gap: 10px;
+  padding-left: 20%;
+  transition: background 0.2s, padding 0.3s;
+}
+
+.sidebar.collapsed .sidebar-item {
+  justify-content: center; /* Centra solo el ícono */
+}
+
+.sidebar-item:hover {
+  background-color: #34495e;
+}
+
+.sidebar-item.active {
+  background-color: #6b46c1; /* Resalta el ítem activo */
+  border-left: 3px solid #afafaf;
+}
+
+.sidebar-label {
+  white-space: nowrap;
+  transition: opacity 0.3s;
+}
+
+.sidebar.collapsed .sidebar-label {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+/* Contenido principal */
+.content-sidebear {
+    height: 100vh;
+    /* width: 30vw; */
+    flex-grow: 1;
+    background-color: rgb(235, 234, 234); /* Fondo claro */
+    padding: 20px;
+    color: #202020; /* Texto oscuro para contraste */
+}
+
+.page-wrapper {
+  background: linear-gradient(to bottom right, #6b46c1, #040db6);
+  min-height: 100%; /* Asegura que ocupe toda la altura */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 20px;
+}
+
+/* Botones u otros elementos interactivos */
+.button-primary {
+  background-color: #6b46c1; /* Usa el morado principal */
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: #a78bfa; /* Cambia a un tono claro al pasar el mouse */
+}
+
+.hamburguer-button{
+    padding: 0.5em 0.9em;
+    margin: 0em 0em;
+    display: flex; /* Habilita flexbox */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Distribuye los elementos en los extremos */
+    gap: 9rem;
+}
+
+/* Efectos generales para las formas */
+.geometric-bar-shape {
+    /* position: relative; */
+    background: linear-gradient(45deg, 
+        rgba(79, 172, 254, 0.12), 
+        rgba(185, 128, 255, 0.12));
+    border-radius: 50%;
+    animation: float 25s infinite ease-in-out;
+    filter: blur(1px);
+    /* z-index: -1 */
+}
+
+.geometric-bar-shape,
+.geometric-shape {
+  position: absolute; /* o relative según tu layout */
+  z-index: 0;
+}
+
+/* Configuraciones específicas para cada forma */
+
+.shape-bar-2 {
+    width: 240px;
+    height: 250px;
+    top: -130px;
+    right: 30%;
+    animation-delay: -8s;
+}
+
+.shape-bar-3 {
+    width: 170%;
+    height: 45%;
+    bottom: 30%;
+    left: 55%;
+    animation-delay: -16s;
+}
+
+.shape-bar-4 {
+    width: 110%;
+    height: 36%;
+    bottom: -10%;
+    right: 40%;
+    animation-delay: -24s;
+}
+
+.shape-bar-2-expanded {
+    width: 240px;
+    height: 250px;
+    top: -100px;
+    right: 30%;
+    animation-delay: -8s;
+}
+
+.shape-bar-3-expanded {
+    width: 450%;
+    height: 40%;
+    bottom: 35%;
+    left: 30%;
+    animation-delay: -16s;
+}
+
+.shape-bar-4-expanded {
+    width: 510%;
+    height: 50%;
+    bottom: -10%;
+    right: 30%;
+    animation-delay: -24s;
+}
+
+.geometric-bar-shape,
+.geometric-shape {
+  pointer-events: none;
+}
+
+.sidebar-logo {
+  position: absolute;
+  top: 1rem;      /* separación desde arriba */
+  right: 2rem;    /* separación desde la derecha */
+  width: 50px;    /* o el tamaño que necesites */
+  height: auto;
+  pointer-events: none; /* si no debe captar clicks */
+  z-index: 2;     /* para que quede por encima de las shapes */
+}
+
+.selectedSection{
+  background-color: #eeeff3;
+  color: #202020;
+  font-weight: bold;
+}
+
+@media (max-width: 1524px) {
+  .hamburguer-button {
+    gap: 5rem; /* Espacio reducido */
+    font-size: 0.9rem;
+  } 
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .hamburguer-button {
+    gap: 1rem; /* Espacio más pequeño */
+    font-size: 0.8rem;
+  }
+}
+
+/* Ajuste para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .hamburguer-button {
+    gap: 1rem; /* Espacio mínimo */
+    font-size: 0.7rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.selectedSection {
+  position: relative;
+  overflow: hidden;
+  background-color: #eee;      /* color base */
+}
+
+.selectedSection::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(
+    to left,
+    transparent 30%,
+    #2720BA 1%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: barrido 1s ease-in-out;
+}
+
+@keyframes barrido {
+  to {
+    transform: translateX(100%);
+  }
+}
